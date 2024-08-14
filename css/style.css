@@ -1,63 +1,117 @@
-main {
-  display: flex;
-}
-header {
-  text-align: center;
-}
-form {
-  padding: 12px;
-  background-color: aliceblue;
-}
-aside {
-  border: 1px;
-  margin: 20px;
+/* Struktur dasar */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
 }
 
-footer {
-  text-align: center;
-}
-
-input[type="number"] {
-  width: 75%;
-  padding: 5px;
-  font-size: 16px;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-}
-.text-center {
-  text-align: center;
-}
-.form-input {
-  max-width: 75%;
+.container {
+  max-width: 1200px;
   margin: auto;
+  padding: 20px;
 }
 
-.form-input div {
+.header,
+.footer {
+  text-align: center;
+  background: #007bff;
+  color: white;
+  padding: 10px 0;
+}
+
+/* .header {
+  background: url(/assets/pexels-karolina-grabowska-4397841.jpg) no-repeat
+    center center;
+  background-size: cover;
+} */
+
+.header h1 {
+  margin: 0;
+}
+
+.header p {
+  margin: 5px 0;
   margin-bottom: 15px;
 }
 
-.form-input label {
-  font-weight: bold;
+/* Kalkulator dan hasil BMI dalam satu div menggunakan Flexbox */
+.calculator-result {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 20px 0;
 }
 
-.form-input input[type="number"],
-.form-input input[type="radio"] + label {
-  margin-left: 5px;
+.calculator,
+.result {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
 }
 
-.form-buttons button {
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Kelompok Form untuk input */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-primary,
+.btn-secondary {
   padding: 10px 20px;
-  font-size: 14px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  border: 0;
-  color: #000;
-  border-radius: 12px;
 }
 
-.reset {
-  background-color: salmon;
+.btn-primary {
+  background-color: #007bff;
+  color: white;
 }
 
-.submit {
-  background-color: turquoise;
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+/* Informasi tentang BMI dan kesehatan */
+.information {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: url(/assets/pexels-andres-ayrton-6551415.jpg) no-repeat center
+    center;
+  background-size: cover;
+}
+
+/* Tips BMI tambahan */
+.bmi-tips {
+  margin-top: 20px;
+}
+
+.bmi-tips header {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.bmi-tips div {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
 }

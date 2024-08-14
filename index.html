@@ -3,105 +3,148 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kalkulator BMI</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <title>Kalkulator BMI Interaktif</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
-    <!-- header start -->
-    <header>
+    <!-- Bagian header -->
+    <header class="header">
       <h1>Kalkulator BMI</h1>
+      <p>
+        Menghitung Indeks Massa Tubuh dan memahami dampaknya bagi kesehatan
+        Anda.
+      </p>
     </header>
-    <!-- header end -->
-    <!-- Content start -->
-    <main>
-      <aside>
-        <article>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias
-            vero repudiandae necessitatibus! Adipisci quo quam obcaecati
-            mollitia soluta similique. Error culpa aut nesciunt molestiae fuga
-            sit, quo consequuntur! Voluptatibus, similique!Lorem Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit. Velit delectus nam
-            optio eligendi soluta tempora eos amet? Magnam nesciunt voluptatem
-            neque reprehenderit vitae! Dolorum cum optio explicabo, quaerat
-            totam exercitationem. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Labore quam repellendus alias perferendis animi
-            dolore ut rerum eius beatae itaque, veniam sit doloremque
-            consequuntur ex recusandae corrupti illo soluta laudantium. Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Amet, similique
-            doloribus rerum placeat quos rem distinctio odio delectus nisi?
-            Dolore eligendi dolores, quisquam similique animi quia odit beatae
-            error at!
-          </p>
-        </article>
 
-        <form action="" class="form-input">
-          <h3 class="text-center">Form Input</h3>
-          <div class="input-jk">
-            <label for="jenisKelamin">Jenis Kelamin</label><br />
-            <input type="radio" name="jenisKelamin" id="pria" value="pria" />
-            <label for="pria">Pria</label>
-            <input
-              type="radio"
-              name="jenisKelamin"
-              id="wanita"
-              value="wanita"
-            />
-            <label for="wanita">Wanita</label>
-          </div>
+    <!-- Area Konten Utama -->
+    <main class="container">
+      <!-- Div utama untuk kalkulator dan hasil menggunakan Flexbox -->
+      <div class="calculator-result">
+        <!-- Seksi kalkulator BMI -->
+        <div class="calculator">
+          <header>
+            <h2>Hitung BMI Anda</h2>
+            <p>
+              Masukkan informasi Anda di bawah ini untuk mengetahui BMI dan tips
+              kesehatan terkait.
+            </p>
+          </header>
+          <form id="bmi-form">
+            <!-- Kelompok Form untuk Jenis Kelamin -->
+            <div class="form-group">
+              <label for="gender">
+                Jenis Kelamin:
+                <i
+                  class="fa-solid fa-venus-mars"
+                  title="Jenis kelamin dibutuhkan untuk perhitungan BMI yang lebih akurat."
+                ></i>
+              </label>
+              <select id="gender">
+                <option value="pria">Pria</option>
+                <option value="wanita">Wanita</option>
+              </select>
+            </div>
 
-          <div class="input-bb">
-            <label for="beratBadan">Berat Badan (kg)</label><br />
-            <input type="number" name="beratBadan" />
-          </div>
+            <!-- Kelompok Form untuk Berat Badan -->
+            <div class="form-group">
+              <label for="weight">
+                Berat Badan (kg):
+                <i
+                  class="fa-solid fa-weight-scale"
+                  title="Masukkan berat badan Anda dalam kilogram."
+                ></i>
+              </label>
+              <input type="number" id="weight" required />
+            </div>
 
-          <div class="input-usia">
-            <label for="usia">Usia (tahun)</label><br />
-            <input type="number" name="usia" />
-          </div>
+            <!-- Kelompok Form untuk Tinggi Badan -->
+            <div class="form-group">
+              <label for="height">
+                Tinggi Badan (cm):
+                <i
+                  class="fa-solid fa-ruler"
+                  title="Masukkan tinggi badan Anda dalam sentimeter."
+                ></i>
+              </label>
+              <input type="number" id="height" required />
+            </div>
 
-          <div class="input-tb">
-            <label for="tinggiBadan">Tinggi Badan (cm)</label><br />
-            <input type="number" name="tinggiBadan" />
-          </div>
+            <!-- Kelompok Form untuk Usia -->
+            <div class="form-group">
+              <label for="age">
+                Usia (tahun):
+                <i
+                  class="fa-solid fa-calendar"
+                  title="Masukkan usia Anda dalam tahun."
+                ></i>
+              </label>
+              <input type="number" id="age" required />
+            </div>
 
-          <div class="form-buttons">
-            <button type="button" class="submit">Hitung BMI</button>
-            <button type="reset" class="reset">Reset</button>
-          </div>
-        </form>
+            <!-- Tombol untuk menghitung BMI -->
+            <div class="form-buttons">
+              <button
+                type="button"
+                class="btn-primary"
+                onclick="calculateBMI()"
+              >
+                Hitung BMI
+              </button>
+              <button type="reset" class="btn-secondary">Reset</button>
+            </div>
+          </form>
+        </div>
 
-        <article></article>
-      </aside>
-      <!-- split content -->
-      <aside>
-        <section>
-          <h3>Form Information</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias
-            vero repudiandae necessitatibus! Adipisci quo quam obcaecati
-            mollitia soluta similique. Error culpa aut nesciunt molestiae fuga
-            sit, quo consequuntur! Voluptatibus, similique!Lorem Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit. Velit delectus nam
-            optio eligendi soluta tempora eos amet? Magnam nesciunt voluptatem
-            neque reprehenderit vitae! Dolorum cum optio explicabo, quaerat
-            totam exercitationem. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Labore quam repellendus alias perferendis animi
-            dolore ut rerum eius beatae itaque, veniam sit doloremque
-            consequuntur ex recusandae corrupti illo soluta laudantium. Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Amet, similique
-            doloribus rerum placeat quos rem distinctio odio delectus nisi?
-            Dolore eligendi dolores, quisquam similique animi quia odit beatae
-            error at!
-          </p>
-        </section>
-      </aside>
+        <!-- Seksi untuk menampilkan hasil BMI -->
+        <div class="result">
+          <header>
+            <h2>Hasil BMI</h2>
+          </header>
+          <article>
+            <p id="bmi-result">BMI Anda akan tampil di sini</p>
+            <p id="bmiCategory"></p>
+            <div id="tips"></div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Penjelasan tentang BMI dan Kesehatan -->
+      <section class="information">
+        <header>
+          <h2>Apa itu BMI?</h2>
+        </header>
+        <p>
+          BMI (Body Mass Index) adalah ukuran yang digunakan untuk menentukan
+          kategori berat badan seseorang berdasarkan tinggi dan berat badan. BMI
+          memberikan indikasi apakah seseorang memiliki berat badan yang sehat.
+        </p>
+        <p>Berikut adalah kategori BMI:</p>
+        <ul>
+          <li><strong>Kurang dari 18.5:</strong> Kurus</li>
+          <li><strong>18.5 - 24.9:</strong> Normal</li>
+          <li><strong>25 - 29.9:</strong> Overweight</li>
+          <li><strong>30 ke atas:</strong> Obesitas</li>
+        </ul>
+        <p>
+          Penting untuk diingat bahwa BMI hanya salah satu indikator kesehatan
+          dan tidak memperhitungkan faktor-faktor lain seperti massa otot atau
+          distribusi lemak tubuh. Konsultasikan dengan profesional kesehatan
+          untuk penilaian yang lebih komprehensif.
+        </p>
+      </section>
     </main>
-    <!-- content end -->
-    <!-- footer start -->
-    <footer>
-      <p>Copyright &copy; Akhmad Fauzan</p>
+
+    <!-- Bagian footer -->
+    <footer class="footer">
+      <p>&copy; 2024 Kalkulator BMI.</p>
     </footer>
-    <!-- footer end -->
+
+    <!-- Menghubungkan file JavaScript eksternal -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
