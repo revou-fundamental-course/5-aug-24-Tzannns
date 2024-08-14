@@ -44,7 +44,9 @@ body {
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  background-color: #fff;
+  background: url(/assets/images/pexels-andres-ayrton-6551415.jpg);
+  background-size: contain;
+  color: #fff;
 }
 
 .result {
@@ -86,11 +88,11 @@ body {
 .information {
   margin-top: 40px;
   padding: 20px;
-  background-color: #fff;
+  color: #191616;
   border: 1px solid #ccc;
   border-radius: 8px;
-  background: url(/assets/pexels-andres-ayrton-6551415.jpg) no-repeat center
-    center;
+  background: url(/assets/images/pexels-ketut-subiyanto-4474052.jpg) no-repeat
+    center center;
   background-size: cover;
 }
 
